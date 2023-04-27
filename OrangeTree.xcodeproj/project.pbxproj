@@ -15,6 +15,7 @@
 		49896F6929FB1F61006C70FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49896F6829FB1F61006C70FC /* Assets.xcassets */; };
 		49896F6C29FB1F61006C70FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49896F6A29FB1F61006C70FC /* LaunchScreen.storyboard */; };
 		49896F7329FB1F7B006C70FC /* Smashing-Things.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 49896F7229FB1F7B006C70FC /* Smashing-Things.atlas */; };
+		49896F7529FB23C0006C70FC /* Orange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49896F7429FB23C0006C70FC /* Orange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		49896F6829FB1F61006C70FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49896F6B29FB1F61006C70FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49896F7229FB1F7B006C70FC /* Smashing-Things.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Smashing-Things.atlas"; sourceTree = "<group>"; };
+		49896F7429FB23C0006C70FC /* Orange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				49896F5D29FB1F60006C70FC /* GameScene.sks */,
 				49896F6129FB1F60006C70FC /* GameScene.swift */,
 				49896F6329FB1F60006C70FC /* GameViewController.swift */,
+				49896F7429FB23C0006C70FC /* Orange.swift */,
 				49896F6529FB1F60006C70FC /* Main.storyboard */,
 				49896F6829FB1F61006C70FC /* Assets.xcassets */,
 				49896F6A29FB1F61006C70FC /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				49896F6229FB1F60006C70FC /* GameScene.swift in Sources */,
 				49896F6429FB1F60006C70FC /* GameViewController.swift in Sources */,
 				49896F5C29FB1F60006C70FC /* AppDelegate.swift in Sources */,
+				49896F7529FB23C0006C70FC /* Orange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
