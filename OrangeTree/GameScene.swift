@@ -22,6 +22,9 @@ class GameScene: SKScene {
         shapeNode.lineCap = .round
         shapeNode.strokeColor = UIColor(white: 1, alpha: 0.3)
         addChild(shapeNode)
+        
+        // Set the contact delegate
+        physicsWorld.contactDelegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -74,4 +77,27 @@ class GameScene: SKScene {
         // Remove the path from shapeNode
         shapeNode.path = nil
     }
+}
+
+
+extension GameScene: SKPhysicsContactDelegate {
+  // Called when the physicsWorld detects two nodes colliding
+  func didBegin(_ contact: SKPhysicsContact) {
+    let nodeA = contact.bodyA.node
+    let nodeB = contact.bodyB.node
+
+    // Check that the bodies collided hard enough
+    if contact.collisionImpulse > 15 {
+      if nodeA?.name == "skull" {
+        removeSkull(node: nodeA!)
+      } else if nodeB?.name == "skull" {
+        removeSkull(node: nodeB!)
+      }
+    }
+  }
+
+  // Function used to remove the Skull node from the scene
+  func removeSkull(node: SKNode) {
+    node.removeFromParent()
+  }
 }
