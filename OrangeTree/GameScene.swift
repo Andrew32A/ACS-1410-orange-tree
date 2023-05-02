@@ -14,7 +14,7 @@ class GameScene: SKScene {
     var touchStart: CGPoint = .zero
     var shapeNode = SKShapeNode()
     var boundary = SKNode()
-    var numOfLevels: UInt32 = 2
+    var numOfLevels: UInt32 = 3
     
     override func didMove(to view: SKView) {
         // Connect Game Objects
