@@ -28,13 +28,12 @@ class GameScene: SKScene {
         // Set the contact delegate
         physicsWorld.contactDelegate = self
         
-        // disabled boundary for now due to improper placement bug
-//        // Setup the boundaries
-//        boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
-//        let background = childNode(withName: "background") as? SKSpriteNode
-//        boundary.position = CGPoint(x: (background?.size.width ?? 0) / -2, y: (background?.size.height ?? 0) / -2)
-//        addChild(boundary)
-//
+        // Setup the boundaries
+        boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
+        let background = childNode(withName: "background") as? SKSpriteNode
+        boundary.position = CGPoint(x: (background?.size.width ?? 0) / 2, y: (background?.size.height ?? 0) / 2)
+        addChild(boundary)
+
         // Add the Sun to the scene
         let sun = SKSpriteNode(imageNamed: "Sun")
         sun.name = "sun"
