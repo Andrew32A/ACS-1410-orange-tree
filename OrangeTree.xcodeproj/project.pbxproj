@@ -17,6 +17,8 @@
 		49896F7329FB1F7B006C70FC /* Smashing-Things.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 49896F7229FB1F7B006C70FC /* Smashing-Things.atlas */; };
 		49896F7529FB23C0006C70FC /* Orange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49896F7429FB23C0006C70FC /* Orange.swift */; };
 		49896F7729FF6E2E006C70FC /* Level-2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49896F7629FF6E2E006C70FC /* Level-2.sks */; };
+		49896F7A2A018E5B006C70FC /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 49896F782A018E5B006C70FC /* Explosion.sks */; };
+		49896F7B2A018E5B006C70FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49896F792A018E5B006C70FC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		49896F7229FB1F7B006C70FC /* Smashing-Things.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = "Smashing-Things.atlas"; sourceTree = "<group>"; };
 		49896F7429FB23C0006C70FC /* Orange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orange.swift; sourceTree = "<group>"; };
 		49896F7629FF6E2E006C70FC /* Level-2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = "Level-2.sks"; sourceTree = "<group>"; };
+		49896F782A018E5B006C70FC /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		49896F792A018E5B006C70FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 		49896F4F29FB1F60006C70FC = {
 			isa = PBXGroup;
 			children = (
+				49896F792A018E5B006C70FC /* Assets.xcassets */,
 				49896F5A29FB1F60006C70FC /* OrangeTree */,
 				49896F5929FB1F60006C70FC /* Products */,
 			);
@@ -64,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				49896F5B29FB1F60006C70FC /* AppDelegate.swift */,
+				49896F782A018E5B006C70FC /* Explosion.sks */,
 				49896F5D29FB1F60006C70FC /* Level-1.sks */,
 				49896F7629FF6E2E006C70FC /* Level-2.sks */,
 				49896F6129FB1F60006C70FC /* GameScene.swift */,
@@ -140,6 +146,8 @@
 				49896F5E29FB1F60006C70FC /* Level-1.sks in Resources */,
 				49896F7729FF6E2E006C70FC /* Level-2.sks in Resources */,
 				49896F6929FB1F61006C70FC /* Assets.xcassets in Resources */,
+				49896F7A2A018E5B006C70FC /* Explosion.sks in Resources */,
+				49896F7B2A018E5B006C70FC /* Assets.xcassets in Resources */,
 				49896F6C29FB1F61006C70FC /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

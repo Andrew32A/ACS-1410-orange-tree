@@ -28,12 +28,13 @@ class GameScene: SKScene {
         // Set the contact delegate
         physicsWorld.contactDelegate = self
         
-        // Setup the boundaries
-        boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
-        let background = childNode(withName: "background") as? SKSpriteNode
-        boundary.position = CGPoint(x: (background?.size.width ?? 0) / -2, y: (background?.size.height ?? 0) / -2)
-        addChild(boundary)
-        
+        // disabled boundary for now due to improper placement bug
+//        // Setup the boundaries
+//        boundary.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: .zero, size: size))
+//        let background = childNode(withName: "background") as? SKSpriteNode
+//        boundary.position = CGPoint(x: (background?.size.width ?? 0) / -2, y: (background?.size.height ?? 0) / -2)
+//        addChild(boundary)
+//
         // Add the Sun to the scene
         let sun = SKSpriteNode(imageNamed: "Sun")
         sun.name = "sun"
@@ -121,11 +122,13 @@ extension GameScene: SKPhysicsContactDelegate {
 
     // Check that the bodies collided hard enough
     if contact.collisionImpulse > 15 {
-      if nodeA?.name == "skull" {
-        removeSkull(node: nodeA!)
-      } else if nodeB?.name == "skull" {
-        removeSkull(node: nodeB!)
-      }
+        if nodeA?.name == "skull" {
+            removeSkull(node: nodeA!)
+            skullDestroyedParticles(point: nodeA!.position)
+        } else if nodeB?.name == "skull" {
+            removeSkull(node: nodeB!)
+            skullDestroyedParticles(point: nodeA!.position)
+        }
     }
   }
 
@@ -133,4 +136,16 @@ extension GameScene: SKPhysicsContactDelegate {
   func removeSkull(node: SKNode) {
     node.removeFromParent()
   }
+}
+
+extension GameScene {
+  func skullDestroyedParticles(point: CGPoint) {
+      if let explosion = SKEmitterNode(fileNamed: "Explosion") {
+        addChild(explosion)
+        explosion.position = point
+        let wait = SKAction.wait(forDuration: 1)
+        let removeExplosion = SKAction.removeFromParent()
+        explosion.run(SKAction.sequence([wait, removeExplosion]))
+      }
+    }
 }
