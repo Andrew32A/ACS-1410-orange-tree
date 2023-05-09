@@ -19,7 +19,7 @@ class GameScene: SKScene {
     var shapeNode = SKShapeNode()
     var boundary = SKNode()
     var numOfLevels: UInt32 = 3
-    
+    var scoreLabelNode: SKLabelNode!
     
     override func didMove(to view: SKView) {
         // Connect Game Objects
@@ -45,6 +45,10 @@ class GameScene: SKScene {
         sun.position.x = size.width / 2 - (sun.size.width * 0.75)
         sun.position.y = size.height / 2 - (sun.size.height * 0.75)
         addChild(sun)
+        
+        // Score label
+        let scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
+        scoreLabelNode = scoreLabel
     }
     
     // Class method to load .sks files
@@ -56,6 +60,7 @@ class GameScene: SKScene {
         // Get the location of the touch on the screen
         let touch = touches.first!
         let location = touch.location(in: self)
+        let scoreLabel = self.childNode(withName: "scoreLabel") as! SKLabelNode
 
         // Check if the touch was on the Orange Tree
         if atPoint(location).name == "tree" {
@@ -84,6 +89,12 @@ class GameScene: SKScene {
             }
         }
 
+    }
+    
+    // update score text
+    override func update(_ currentTime: TimeInterval) {
+        // Update the score label's text
+        scoreLabelNode.text = "Score: \(score)"
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
