@@ -8,6 +8,9 @@
 import SpriteKit
 import GameplayKit
 
+// had to put this outside of class, self and normal version weren't updating properly
+var currentLevel: Int = 0
+
 class GameScene: SKScene {
     var orangeTree: SKSpriteNode!
     var orange: Orange?
@@ -15,6 +18,7 @@ class GameScene: SKScene {
     var shapeNode = SKShapeNode()
     var boundary = SKNode()
     var numOfLevels: UInt32 = 3
+    
     
     override func didMove(to view: SKView) {
         // Connect Game Objects
@@ -66,16 +70,19 @@ class GameScene: SKScene {
         
         // Check whether the sun was tapped and change the level
         for node in nodes(at: location) {
-          if node.name == "sun" {
-            let n = Int(arc4random() % numOfLevels + 1)
-            if let scene = GameScene.Load(level: n) {
-              scene.scaleMode = .aspectFill
-              if let view = view {
-                view.presentScene(scene)
-              }
+            if node.name == "sun" {
+                currentLevel += 1
+                print(currentLevel)
+                
+                if let scene = GameScene.Load(level: currentLevel) {
+                    scene.scaleMode = .aspectFill
+                    if let view = view {
+                        view.presentScene(scene)
+                    }
+                }
             }
-          }
         }
+
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
