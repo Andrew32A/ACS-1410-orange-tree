@@ -10,6 +10,7 @@ import GameplayKit
 
 // had to put this outside of class, self and normal version weren't updating properly
 var currentLevel: Int = 0
+var score: Int = 0
 
 class GameScene: SKScene {
     var orangeTree: SKSpriteNode!
@@ -129,12 +130,15 @@ extension GameScene: SKPhysicsContactDelegate {
     // Check that the bodies collided hard enough
     if contact.collisionImpulse > 15 {
         if nodeA?.name == "skull" {
+            score += 150
             removeSkull(node: nodeA!)
             skullDestroyedParticles(point: nodeA!.position)
         } else if nodeB?.name == "skull" {
+            score += 150
             removeSkull(node: nodeB!)
             skullDestroyedParticles(point: nodeA!.position)
         }
+        print(score)
     }
   }
 
