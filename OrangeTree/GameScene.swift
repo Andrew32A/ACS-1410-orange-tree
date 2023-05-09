@@ -70,7 +70,7 @@ class GameScene: SKScene {
         
         // Check whether the sun was tapped and change the level
         for node in nodes(at: location) {
-            if node.name == "sun" {
+            if node.name == "sun" || node.name == "start" {
                 currentLevel += 1
                 print(currentLevel)
                 
